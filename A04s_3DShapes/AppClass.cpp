@@ -17,6 +17,21 @@ void AppClass::InitVariables(void)
 
 void AppClass::Update(void)
 {
+
+	//NEW
+	static float fTime = 0.0f;
+	vector3 v3Start = vector3(-2.0f, 0.0f, 0.0f);
+	vector3 v3End = vector3(2.0f, 0.0f, 0.0f);
+	vector3 v3Current = glm::lerp(v3Start, v3End, fTime);
+	m_m4Transform = glm::translate(v3Current);
+	fTime += 0.01f;
+	
+	if (fTime > 1.0f) //this if statement can be replaced with a mod (%)
+	{
+		fTime = 0.0f;
+	}
+
+
 	//Update the system's time
 	m_pSystem->UpdateTime();
 
@@ -48,7 +63,7 @@ void AppClass::Display(void)
 	//clear the screen
 	ClearScreen();
 	
-	m_pPrimitive->Render(m_pCameraMngr->GetProjectionMatrix(), m_pCameraMngr->GetViewMatrix(), ToMatrix4(m_qArcBall));
+	m_pPrimitive->Render(m_pCameraMngr->GetProjectionMatrix(), m_pCameraMngr->GetViewMatrix(), m_m4Transform); //NEW (the last value)
 	
 	//Render the grid based on the camera's mode:
 	m_pMeshMngr->AddGridToRenderListBasedOnCamera(m_pCameraMngr->GetCameraMode());
