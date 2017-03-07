@@ -37,6 +37,29 @@ void AppClass::Update(void)
 
 #pragma region Your Code goes here
 	
+	/* Location vectors that define character movement
+	vector3(-4.0f,-2.0f, 5.0f);
+
+	vector3(1.0f,-2.0f, 5.0f);
+
+	vector3(-3.0f,-1.0f, 3.0f);
+
+	vector3(2.0f,-1.0f, 3.0f);
+
+	vector3(-2.0f, 0.0f, 0.0f);
+
+	vector3(3.0f, 0.0f, 0.0f);
+
+	vector3(-1.0f, 1.0f,-3.0f);
+
+	vector3(4.0f, 1.0f,-3.0f);
+
+	vector3(0.0f, 2.0f,-5.0f);
+
+	vector3(5.0f, 2.0f,-5.0f);
+
+	vector3(1.0f, 3.0f,-5.0f);
+	*/
 
 	static DWORD timeSinceBoot = GetTickCount(); //time since the computer boot
 	DWORD timeSinceStart = GetTickCount() - timeSinceBoot; //current time (since the program started)
