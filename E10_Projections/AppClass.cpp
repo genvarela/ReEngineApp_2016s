@@ -15,7 +15,25 @@ void AppClass::InitVariables(void)
 
 	//Calculate the first projections
 	m_m4Projection = glm::perspective(45.0f, 1080.0f / 768.0f, 0.01f, 1000.0f);
-	m_m4View = glm::lookAt(glm::vec3(0.0f, 0.0f, 15.0f), glm::vec3(0.0f, 0.0f, 14.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	//argument 1: a degree measurement of field of view
+	//argument 2: a ratio of how wide the camera is versus how tall it is (window size is a good start for this, but affects the aspect ratio)
+	//argument 3: how close you can see relative to you (draw distance)
+	//argument 4: how far you can see relative to you (draw distance)
+
+	//m_m4Projection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, 0.01f, 1000.0f);
+	//argument 1: how much to the left the camera displays
+	//argument 2: how much to the right the camera displays
+	//argument 3: width
+	//argument 4: height
+	//argument 5 & 6: draw distance
+
+	m_m4View = glm::lookAt(glm::vec3(0.0f, 0.0f, 15.0f), glm::vec3(0.0f, 0.0f, 14.0f), glm::vec3(0.0f, 1.0f, 0.0f)); 
+	//LookAt has 3 arguments:
+	//first vec3: camera location
+	//middle vec3: view location (what are you looking at? can be used with first vec3 to get a directional vector)
+	//last vec3: defines what "up" means in this space
+	//the z axis on the last vec3 can't be 1 because then the up and the forward vectors would be the same
+
 }
 
 void AppClass::Update(void)

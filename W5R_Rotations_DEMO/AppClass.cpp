@@ -44,16 +44,16 @@ void AppClass::Update(void)
 	//m_pMeshMngr->SetModelMatrix(ToMatrix4(m_qArcBall), 0);
 
 #pragma region
-	//JUST ADDED
-	glm::quat q1 = glm::quat(0.7f, 0.0f, 0.0f, 0.7f);
-	quaternion q2 = glm::quat(vector3(0.0f, 0.0f, glm::radians(90.0f)));
-	quaternion q3 = glm::angleAxis(90.0f, vector3(1.0f, 0.0f, 0.0f));
+	////JUST ADDED
+	//glm::quat q1 = glm::quat(0.7f, 0.0f, 0.0f, 0.7f);
+	//quaternion q2 = glm::quat(vector3(0.0f, 0.0f, glm::radians(90.0f)));
+	//quaternion q3 = glm::angleAxis(90.0f, vector3(1.0f, 0.0f, 0.0f));
 
-	//multiply two quaternions together to "add" them- so if you change one axis,
-	//and then change another one, multiply these together to combine into one 
-	//transformation
+	////multiply two quaternions together to "add" them- so if you change one axis,
+	////and then change another one, multiply these together to combine into one 
+	////transformation
 
-	m_pMeshMngr->SetModelMatrix(ToMatrix4(q3), "Cow");
+	//m_pMeshMngr->SetModelMatrix(ToMatrix4(q3), "Cow");
 
 #pragma endregion
 
