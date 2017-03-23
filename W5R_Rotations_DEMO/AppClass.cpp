@@ -43,17 +43,17 @@ void AppClass::Update(void)
 	//Set the model matrix for the first model to be the arcball
 	//m_pMeshMngr->SetModelMatrix(ToMatrix4(m_qArcBall), 0);
 
-#pragma region
+#pragma region 
 	////JUST ADDED
-	//glm::quat q1 = glm::quat(0.7f, 0.0f, 0.0f, 0.7f);
-	//quaternion q2 = glm::quat(vector3(0.0f, 0.0f, glm::radians(90.0f)));
-	//quaternion q3 = glm::angleAxis(90.0f, vector3(1.0f, 0.0f, 0.0f));
+	glm::quat q1 = glm::quat(0.7f, 0.0f, 0.0f, 0.7f);
+	quaternion q2 = glm::quat(vector3(0.0f, 0.0f, glm::radians(90.0f)));
+	quaternion q3 = glm::angleAxis(90.0f, vector3(1.0f, 0.0f, 0.0f));
 
 	////multiply two quaternions together to "add" them- so if you change one axis,
 	////and then change another one, multiply these together to combine into one 
 	////transformation
 
-	//m_pMeshMngr->SetModelMatrix(ToMatrix4(q3), "Cow");
+	m_pMeshMngr->SetModelMatrix(ToMatrix4(q3), "Cow");
 
 #pragma endregion
 
@@ -63,7 +63,7 @@ void AppClass::Update(void)
 	m_m4Steve = glm::rotate(IDENTITY_M4, m_v3Orientation.x, vector3(1.0f, 0.0f, 0.0f));
 	m_m4Steve = glm::rotate(m_m4Steve, m_v3Orientation.y, vector3(0.0f, 1.0f, 0.0f));
 	m_m4Steve = glm::rotate(m_m4Steve, m_v3Orientation.z, vector3(0.0f, 0.0f, 1.0f));
-	m_pMeshMngr->SetModelMatrix(m_m4Steve, "Cow");
+	//m_pMeshMngr->SetModelMatrix(m_m4Steve, "Cow");
 
 	//Adds all loaded instance to the render list
 	m_pMeshMngr->AddSkyboxToRenderList();
