@@ -95,12 +95,6 @@ bool MyBoundingBoxClass::IsColliding(MyBoundingBoxClass* a_other)
 	if (this->m_v3MinG.z > a_other->m_v3MaxG.z)
 		return false;
 
-	//f(A,B)=(AminX<=BmaxX^AmaxX>=BminX)^(AminY<=BmaxY^AmaxY>=BminY)^(AminZ<=BmaxZ^AmaxZ>=BminZ)
-	//if(
-	//	(this->m_v3MinG.x <= a_other->m_v3MaxG.x && this->m_v3MaxG.x >= a_other->m_v3MinG.x) &&
-	//	(this->m_v3MinG.y <= a_other->m_v3MaxG.y && this->m_v3MaxG.y >= a_other->m_v3MinG.y) &&
-	//	(this->m_v3MinG.z <= a_other->m_v3MaxG.z && this->m_v3MaxG.z >= a_other->m_v3MinG.z)
-	//	)
 	return true;
 }
 
