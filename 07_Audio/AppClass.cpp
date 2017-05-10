@@ -75,6 +75,6 @@ void AppClass::Display(void)
 
 void AppClass::Release(void)
 {
-	soundBGM.stop();
+	
 	super::Release(); //release the memory of the inherited fields
 }
